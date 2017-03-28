@@ -20,6 +20,7 @@ public class MyCompany {
         }
     }
 
+
     public void deleteEmployeeOlder(int desiredAge) {
         // TODO
     }
@@ -37,10 +38,23 @@ public class MyCompany {
         return employeeToReturn;
     }
 
-    public void editEmployeeProjectName(String employeeName, String projectName) {
+    public void editEmployeeProjectName(String employeeName, String projectName,int subMenu) {
         for (int i = 0; i < employeeList.size(); i++) {
             if (employeeList.get(i).getName().equals(employeeName)) {
-                employeeList.get(i).setProjectName(projectName);
+                switch (subMenu ) {
+                     case 1:
+                         employeeList.get(i).setName(projectName);
+                         break;
+                     case 2:
+                        employeeList.get(i).setProjectName(projectName);
+                         break;
+                     case 3:
+                        employeeList.get(i).setProjectName(projectName);
+                        break;
+                     default:
+                        break;
+                }
+
             }
         }
     }
