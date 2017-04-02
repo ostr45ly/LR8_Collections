@@ -1,8 +1,11 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class MyCompany {
 
     ArrayList<Employee> employeeList = new ArrayList<Employee>();
+
+    HashMap<String, Employee> treeMap = new HashMap<String,Employee>();
+
 
     public ArrayList<Employee> getAllEmployees() {
         return employeeList;
@@ -10,6 +13,18 @@ public class MyCompany {
 
     public void addEmployee(String employeeName, int age, String projectName) {
         employeeList.add(new Employee(employeeName, age, projectName));
+    }
+
+    public HashMap<String, Employee> getAllEmployeesTr() {
+        return treeMap;
+    }
+
+    public void addTrEmployee( String key,Employee tt) {
+        treeMap.put(key,tt);
+            }
+
+    public void deleteTrEmployee( String key) {
+        treeMap.remove( key);
     }
 
     public void deleteEmployeeByName(String employeeName) {
@@ -49,7 +64,7 @@ public class MyCompany {
                         employeeList.get(i).setProjectName(projectName);
                          break;
                      case 3:
-                        employeeList.get(i).setProjectName(projectName);
+                       // employeeList.clear();
                         break;
                      default:
                         break;
@@ -57,6 +72,9 @@ public class MyCompany {
 
             }
         }
+    }
+    public void print(Iterator<Employee> it) {
+        System.out.println(it.next().getName()+" "+it.next().getProjectName());
     }
 
 }
